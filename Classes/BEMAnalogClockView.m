@@ -393,7 +393,7 @@
     NSDate *time = [dateFormatter dateFromString:stringTime];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSHourCalendarUnit |NSMinuteCalendarUnit |NSSecondCalendarUnit) fromDate: time];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitHour |NSCalendarUnitMinute |NSCalendarUnitSecond) fromDate: time];
     
     NSInteger hours = [components hour];
     NSInteger minutes = [components minute];
