@@ -62,7 +62,7 @@
 
 - (CGFloat)analogClock:(BEMAnalogClockView *)clock graduationLengthForIndex:(NSInteger)index {
     if (clock.tag == 1) {
-        if (!((index % 5) == 1)) { // Every 5 graduation will be longer.
+        if ((!(index % 5)) == 1) { // Every 5 graduation will be longer.
             return 20;
         } else {
             return 5;
@@ -72,7 +72,7 @@
 }
 
 - (UIColor *)analogClock:(BEMAnalogClockView *)clock graduationColorForIndex:(NSInteger)index {
-    if (!((index % 15) == 1)) { // Every 15 graduation will be blue.
+    if ((!(index % 15)) == 1) { // Every 15 graduation will be blue.
         return [UIColor blueColor];
     } else {
         return [UIColor whiteColor];
