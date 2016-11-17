@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QCb-ZU-fSV">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="QCb-ZU-fSV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -13,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
                     </navigationBar>
@@ -26,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-48" y="72"/>
         </scene>
-        <!--View Controller - BEMAnalogClock-->
+        <!--Delegate-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -35,39 +40,59 @@
                         <viewControllerLayoutGuide type="bottom" id="qYf-MF-Gaz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyM-jY-zVi" customClass="BEMAnalogClockView">
-                                <rect key="frame" x="60" y="99" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyM-jY-zVi" customClass="BEMAnalogClockView">
+                                <rect key="frame" x="60" y="99" width="255" height="255"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="80A-JW-HQj"/>
+                                    <constraint firstAttribute="height" constant="255" id="KJT-Zs-xMH"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="aqB-Eh-ZiI"/>
                                 </connections>
                             </view>
-                            <view alpha="0.89999999999999991" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4UQ-lJ-0NJ">
-                                <rect key="frame" x="0.0" y="380" width="320" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <view alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UQ-lJ-0NJ">
+                                <rect key="frame" x="0.0" y="380" width="375" height="100"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="EA8-TF-eb0"/>
+                                </constraints>
                             </view>
-                            <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adN-Kw-C8x" customClass="BEMAnalogClockView">
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adN-Kw-C8x" customClass="BEMAnalogClockView">
                                 <rect key="frame" x="20" y="405" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="NSx-UV-eDo"/>
+                                    <constraint firstAttribute="height" constant="50" id="V9n-da-5uL"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="zJ6-Ju-Qjv"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JB1-Ex-e4j">
-                                <rect key="frame" x="70" y="380" width="250" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JB1-Ex-e4j">
+                                <rect key="frame" x="70" y="380" width="305" height="100"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="45"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4UQ-lJ-0NJ" firstAttribute="top" secondItem="iyM-jY-zVi" secondAttribute="bottom" constant="26" id="3Xe-cY-3cX"/>
+                            <constraint firstItem="JB1-Ex-e4j" firstAttribute="top" secondItem="4UQ-lJ-0NJ" secondAttribute="top" id="406-hG-A4A"/>
+                            <constraint firstAttribute="trailing" secondItem="4UQ-lJ-0NJ" secondAttribute="trailing" id="DSD-R2-dUd"/>
+                            <constraint firstItem="JB1-Ex-e4j" firstAttribute="bottom" secondItem="4UQ-lJ-0NJ" secondAttribute="bottom" id="EWr-Bd-AQh"/>
+                            <constraint firstItem="iyM-jY-zVi" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="LFQ-Ed-dgd"/>
+                            <constraint firstItem="4UQ-lJ-0NJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="LoL-dc-BKg"/>
+                            <constraint firstItem="adN-Kw-C8x" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="MB4-5w-JtP"/>
+                            <constraint firstItem="iyM-jY-zVi" firstAttribute="top" secondItem="y7B-1E-lGl" secondAttribute="bottom" constant="35" id="Sgu-HK-bc1"/>
+                            <constraint firstItem="adN-Kw-C8x" firstAttribute="centerY" secondItem="4UQ-lJ-0NJ" secondAttribute="centerY" id="jSc-qy-Lu7"/>
+                            <constraint firstItem="JB1-Ex-e4j" firstAttribute="leading" secondItem="adN-Kw-C8x" secondAttribute="trailing" id="jYo-Us-CBn"/>
+                            <constraint firstItem="JB1-Ex-e4j" firstAttribute="trailing" secondItem="4UQ-lJ-0NJ" secondAttribute="trailing" id="ylv-st-rG8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="BEMAnalogClock" id="TsI-fV-yx0">
                         <barButtonItem key="leftBarButtonItem" systemItem="play" id="eUH-A2-kzX">
@@ -92,12 +117,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="402" y="72"/>
+            <point key="canvasLocation" x="439" y="72"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>
